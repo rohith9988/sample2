@@ -253,7 +253,36 @@ Python” with 88% score during Jul-Sep 2023
     window.onload = function() {
       updateVisitCount();
     };
+		  
+    // Function to dynamically populate testimonials
+    function renderTestimonials() {
+        const testimonialContainer = document.getElementById("testimonialContainer");
+
+        testimonialsData.forEach(testimonial => {
+            const testimonialDiv = document.createElement("div");
+            testimonialDiv.classList.add("testimonial");
+
+            testimonialDiv.innerHTML = `
+                <img src="${testimonial.image}" alt="${testimonial.name}">
+                <div>
+                    <p>${testimonial.testimonial}</p>
+                    <cite>${testimonial.name}, <span>${testimonial.occupation}</span></cite>
+                </div>
+            `;
+
+            testimonialContainer.appendChild(testimonialDiv);
+        });
+    }
+
+    // Call the function to render testimonials
+    renderTestimonials();
+});
   </script>
+	<div class="cont">
+   <h1><center>Testimonials</center></h1>
+  <div class="testimonial-container" id="testimonialContainer">
+    <!-- Testimonials will be dynamically added here using JavaScript -->
+</div></div>
 <!--counter end-->
 	<footer class="footer"> 
 		<div class="footer-content text-center"> 
